@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
 
         android:background="@color/holo_green_light"
-        android:text="1"
+        android:text="@string/_1"
         app:layout_constraintBottom_toTopOf="@+id/tv_option_4"
         app:layout_constraintEnd_toStartOf="@+id/tv_option_5"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -83,7 +83,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/holo_green_orange"
-        android:text="2"
+        android:text="@string/_2"
         app:layout_constraintBottom_toTopOf="@+id/tv_option_4"
         app:layout_constraintEnd_toStartOf="@+id/tv_option_6"
         app:layout_constraintStart_toEndOf="@+id/tv_option_4" />
@@ -94,7 +94,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/holo_green_violet"
-        android:text="3"
+        android:text="@string/_3"
         app:layout_constraintBottom_toTopOf="@+id/tv_option_4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_option_5" />
@@ -105,7 +105,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/holo_green_blue"
-        android:text="4"
+        android:text="@string/_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_option_5"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -117,7 +117,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/holo_green_red"
-        android:text="5"
+        android:text="@string/_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_option_6"
         app:layout_constraintStart_toEndOf="@+id/tv_option_4" />
@@ -128,7 +128,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/holo_green_skyblue"
-        android:text="6"
+        android:text="@string/_6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_option_5" />
