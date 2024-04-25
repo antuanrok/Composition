@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="holo_green_light">#8BC34A</color>
+    <color name="holo_green_red">#F30707</color>
+    <color name="holo_green_orange">#FF5722</color>
+    <color name="purple_700">#6F39CF</color>
+    <color name="teal_700">#03B5A4</color>
+    <color name="holo_green_violet">#B321CC</color>
+    <color name="holo_green_blue">#1F85D6</color>
+    <color name="holo_green_skyblue">#00BCD4</color>
 </resources>
