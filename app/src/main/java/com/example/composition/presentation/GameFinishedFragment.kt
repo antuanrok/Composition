@@ -36,6 +36,9 @@ class GameFinishedFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,callback)
+        binding.butRetry.setOnClickListener{
+            retryGame()
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +61,7 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun parseArgs() {
-        gameResult = GameResult(
+      /*  gameResult = GameResult(
             requireArguments().getBoolean(KEY_WINNER),
             requireArguments().getInt(KEY_COUNT_RIGHT_ANSWERS),
             requireArguments().getInt(KEY_COUNT_OF_QUESTIONS),
@@ -68,7 +71,10 @@ class GameFinishedFragment : Fragment() {
                 requireArguments().getInt(KEY_MIN_PERCENT_OF_RIGHT_ANSWER),
                 requireArguments().getInt(KEY_GAME_TIME_IN_SECONDS)
             )
-        )
+        )*/
+        requireArguments().getParcelable<GameResult>(KEY_GAME_RESULT)?.let {
+            gameResult = it
+        }
     }
 
     private fun retryGame () {
@@ -87,11 +93,13 @@ class GameFinishedFragment : Fragment() {
         private const val KEY_MIN_COUNT_OF_RIGHT_ANSWERS = "minCountOfRightAnswers"
         private const val KEY_MIN_PERCENT_OF_RIGHT_ANSWER = "minPercentOfRightAnswer"
         private const val KEY_GAME_TIME_IN_SECONDS = "gameTimeInSeconds"
+        private const val KEY_GAME_RESULT = "gameResult"
 
         fun newInstance(result: GameResult): GameFinishedFragment {
             return GameFinishedFragment().apply {
                 arguments = Bundle().apply {
-                    putBoolean(KEY_WINNER, result.winner)
+                    putParcelable(KEY_GAME_RESULT,result)
+                 /*   putBoolean(KEY_WINNER, result.winner)
                     putInt(KEY_COUNT_RIGHT_ANSWERS, result.countRightAnswers)
                     putInt(KEY_COUNT_OF_QUESTIONS, result.countOfQuestions)
                     putInt(KEY_MAXSUMVALUE, result.gameSettings.maxSumValue)
@@ -103,7 +111,7 @@ class GameFinishedFragment : Fragment() {
                         KEY_MIN_PERCENT_OF_RIGHT_ANSWER,
                         result.gameSettings.minPercentOfRightAnswer
                     )
-                    putInt(KEY_GAME_TIME_IN_SECONDS, result.gameSettings.gameTimeInSeconds)
+                    putInt(KEY_GAME_TIME_IN_SECONDS, result.gameSettings.gameTimeInSeconds)*/
 
                 }
             }
