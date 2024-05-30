@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
 import com.example.composition.R
 import com.example.composition.databinding.FragmentGameBinding
 import com.example.composition.databinding.FragmentGameFinishedBinding
@@ -37,12 +38,12 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun setupOnClickListener() {
-        val callback = object : OnBackPressedCallback(true) {
+        /*val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 retryGame()
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
         binding.butRetry.setOnClickListener {
             retryGame()
         }
@@ -121,10 +122,11 @@ class GameFinishedFragment : Fragment() {
 
     private fun retryGame() {
         //  requireActivity().supportFragmentManager.popBackStack(ChooseLevelFragment.NAME,0)
-        requireActivity().supportFragmentManager.popBackStack(
+        /*requireActivity().supportFragmentManager.popBackStack(
             GameFragment.NAME,
             FragmentManager.POP_BACK_STACK_INCLUSIVE
-        )
+        )*/
+        findNavController().popBackStack()
         // requireActivity().supportFragmentManager.popBackStack()
     }
 
@@ -138,7 +140,7 @@ class GameFinishedFragment : Fragment() {
         private const val KEY_MIN_COUNT_OF_RIGHT_ANSWERS = "minCountOfRightAnswers"
         private const val KEY_MIN_PERCENT_OF_RIGHT_ANSWER = "minPercentOfRightAnswer"
         private const val KEY_GAME_TIME_IN_SECONDS = "gameTimeInSeconds"
-        private const val KEY_GAME_RESULT = "gameResult"
+        const val KEY_GAME_RESULT = "gameResult"
 
         fun newInstance(result: GameResult): GameFinishedFragment {
             return GameFinishedFragment().apply {
